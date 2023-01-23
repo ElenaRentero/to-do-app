@@ -1,3 +1,7 @@
+.body{
+    background-image: url('../images/background1.jpg');
+}
+
 .not-active{
     visibility: hidden;
 }
@@ -7,10 +11,10 @@
     justify-content: center;
     font-size: 50px;
     margin-top: 4%;
-    gap: 10px;
-    &__logo{
-        width: 5%;
-        height: 5%;
+    &__title{
+        background: rgba(238, 234, 234, 0.653);
+        border-radius: 20px;
+        padding: 0 20px 0 20px;
     }
 }
 
@@ -20,13 +24,26 @@
         display: flex;
         justify-content: center;
         margin-top: 20px;
+        &--input{
+            background-color: #fff;
+        }
     }
 }
 
 .table{
+    width: 100%;
     margin-left: 21.5%;
     border-radius: 5px;
     border-top: 0px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    background: rgba(238, 234, 234, 0.653);
+}
+
+.button__delete{
+    &--icon:hover{
+        color: black;
+    }
 }
 
 .footer{
@@ -37,4 +54,5 @@
     justify-content: flex-end;
     padding: 20px 20px 20px 20px;
     border-top: solid 1px black;
+    background: rgba(238, 234, 234, 0.653)
 }

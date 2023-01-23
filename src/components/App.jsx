@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Button, ButtonGroup, Input, InputGroup, InputLeftElement, InputRightElement, Select, Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react'
-import { CheckIcon } from '@chakra-ui/icons'
+import { CheckIcon, DeleteIcon } from '@chakra-ui/icons'
 import ls from '../services/localStorage.js'
-import logo  from '../images/logo.png'
 import '../styles/App.scss'
 
 function App() {
@@ -66,7 +65,7 @@ function App() {
   const renderTasks = (array = displayTasks) => {
     if (array) {
       return <Tbody>{array.map((item, index) => (
-        <Tr key={index} id={index}> <Td> {item} </Td> </Tr>
+        <Tr key={index} id={index}><Td className='table__item'> {item} </Td><Td><Button h='1.75rem' size='sm' className='button__delete'><DeleteIcon className='button__delete--icon' color='gray.300'></DeleteIcon></Button></Td></Tr>
       ))}</Tbody>
     }
   }
@@ -75,14 +74,13 @@ function App() {
   return (
     <div className="App">
       <header className='header'>
-        <img className='header__logo' src={logo} alt="Logo" />
         <h1 className='header__title'>To Do App</h1>
       </header>
       <main className='main'>
         <form className='main__form' onSubmit={handleSubmit}>
           <div>
           <InputGroup size='md'>
-            <Input htmlSize={100} className='main__form--input' type="text" name="task" id="task" value={newTask} placeholder='Enter task' onChange={handleChange} />
+            <Input htmlSize={100} className='main__form--input' type="text" name="task" id="task" value={newTask} placeholder='Enter task' backgroundColor='white' onChange={handleChange} />
             <label className='main__form--label' htmlFor="task"></label>
             <InputLeftElement pointerEvents='none' children={<CheckIcon color={tasks.find(item => item.toLowerCase().includes(newTask.toLowerCase())) || newTask === '' ? 'gray.300' : 'green.300'} />}></InputLeftElement>
             <InputRightElement width='17rem'>
@@ -99,7 +97,7 @@ function App() {
             </InputGroup>
           </div>
         </form>
-        <TableContainer width='80%' overflowX='hidden'>
+        <TableContainer width='83%' height='310px' overflowY='scroll' overflowX='hidden' marginTop='10px'> 
           <Table variant='simple' className='table'>
                 {renderTasks()}
           </Table>
