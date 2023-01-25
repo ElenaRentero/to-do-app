@@ -11,11 +11,11 @@ function InputForm({ tasks, newTask, filteredTasks, changeInput, handleClickAdd,
 
     return (
         <InputGroup size='md'>
-            <Input htmlSize={100} className='main__form--input' type="text" name="task" id="task" value={newTask} placeholder='Enter task' backgroundColor='white' onChange={handleChangeInput} />
+            <Input htmlSize={100} className='main__form--input' type="text" name="task" id="task" value={newTask.name} placeholder='Enter task' backgroundColor='white' onInput={handleChangeInput} />
             <label className='main__form--label' htmlFor="task"></label>
-            <InputLeftElement pointerEvents='none' children={<CheckIcon color={tasks.find(item => item.toLowerCase().includes(newTask.toLowerCase())) || newTask === '' ? 'gray.300' : 'green.300'} />}></InputLeftElement>
+            <InputLeftElement pointerEvents='none' children={<CheckIcon color={tasks.find(item => item.name.toLowerCase().includes(newTask.name.toLowerCase())) || newTask.name === '' ? 'gray.300' : 'green.300'} />}></InputLeftElement>
             <InputRightElement width='17rem'>
-                <Button h='1.75rem' size='sm' className={'button__add ' + (!tasks.find(item => item.toLowerCase().includes(newTask.toLowerCase())) || newTask === '' ? '' : 'not-active')} onClick={handleClickAdd}>Add</Button>
+                <Button h='1.75rem' size='sm' className={'button__add ' + (!tasks.find(item => item.name.toLowerCase().includes(newTask.name.toLowerCase())) || newTask.name === '' ? '' : 'not-active')} onClick={handleClickAdd}>Add</Button>
                 <Select size='s' variant='filled' width='auto' marginLeft={2} borderRadius='5px' value={filteredTasks} onChange={handleSelect}>
                     <option value='All'>All</option>
                     <option value='Active'>Active</option>

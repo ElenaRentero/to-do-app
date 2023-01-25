@@ -37,6 +37,12 @@
   overflow-x: scroll;
   overflow-y: scroll;
   background: rgba(238, 234, 234, 0.653);
+  &__item{
+    cursor: pointer;
+  }
+  &__item:hover{
+    background-color: #fff;
+  }
 }
 
 .button {
