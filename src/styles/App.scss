@@ -1,5 +1,5 @@
 .body {
-  background-image: url("../images/background1.jpg");
+  background-image: url("../images/post-it.jpg");
 }
 
 .not-active {
@@ -12,7 +12,7 @@
   font-size: 50px;
   margin-top: 4%;
   &__title {
-    background: rgba(238, 234, 234, 0.653);
+    background: rgba(238, 234, 234, 0.70);
     border-radius: 20px;
     padding: 0 20px 0 20px;
   }
@@ -32,27 +32,88 @@
 
 .table {
   width: 100%;
+  margin-left: 21.5%;
   border-radius: 5px;
   border-top: 0px;
   overflow-x: scroll;
   overflow-y: scroll;
-  background: rgba(238, 234, 234, 0.653);
+  background: rgba(238, 234, 234, 0.70);
   &__item{
-    cursor: pointer;
-  }
-  &__item:hover{
-    background-color: #fff;
+    &--head{
+      width: 80%;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px #edf2f7 ;
+    }
+    &--head:hover{
+      background-color: #fff;
+    }
   }
 }
 
 .button {
-  display: flex;
-  justify-content: flex-end;
   &__delete {
     &--icon:hover {
       color: black;
     }
   }
+}
+
+.detail{
+  background: rgba(238, 234, 234, 0.70);
+  margin-top: 10px;
+  margin-left: 17%;
+  margin-right: 17%;
+  padding: 10px 0 0 0;
+  &__icon{
+    text-align: center;
+    font-weight: 600;
+    padding: 0 0 10px 0;
+  }
+  &__icon:hover{
+    animation: bounce 1s infinite linear;
+  }
+  &__article{
+    padding-bottom: 20px;
+    &--name{
+      border-bottom: solid 1px #edf2f7 ;
+      border-top: solid 1px #edf2f7 ;
+      padding: 10px 0 10px 10px;
+    }
+    &--form{
+      display: flex;
+    }
+    &--label{
+      display: block;
+      padding: 10px 0 10px 10px;
+      margin: 10px 0 0 0;
+      border-radius: 10px;
+    }
+    &--desc{
+      border-bottom: solid 1px #edf2f7 ;
+      padding: 10px 0 10px 0;
+      margin: 10px 0 0 10px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-20px); }
+  50%  { transform: translateX(-30px); }
+  100% { transform: translateX(0); }
+}
+
+.not-found{
+  background: rgba(238, 234, 234, 0.70);
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 17%;
+  margin-right: 17%;
+  padding: 10px 0 10px 0;
+  font-weight: 600;
 }
 
 .footer {
@@ -63,5 +124,5 @@
   justify-content: flex-end;
   padding: 20px 20px 20px 20px;
   border-top: solid 1px black;
-  background: rgba(238, 234, 234, 0.653);
+  background: rgba(238, 234, 234, 0.70);
 }
