@@ -1,12 +1,12 @@
 import { Table, TableContainer } from '@chakra-ui/react'
 import TaskCard from './TaskCard.jsx';
 
-function TasksList({ displayTasks, capitalizeFirstLetter, deleteTask, handleClickCompleted }) {
-    const listOfTasks = displayTasks.map((task) => {
-        return <TaskCard task={task} capitalizeFirstLetter={capitalizeFirstLetter} deleteTask={deleteTask} handleClickCompleted={handleClickCompleted} />
+function TasksList({ displayTasks, capitalizeFirstLetter, deleteTask, changeStatusTask }) {
+    const listOfTasks = displayTasks.map((task, i) => {
+        return <TaskCard task={task} key={i} capitalizeFirstLetter={capitalizeFirstLetter} deleteTask={deleteTask} changeStatusTask={changeStatusTask} />
     });
     return (
-        <TableContainer width='82.5%' height='310px' overflowY='scroll' overflowX='hidden' marginTop='10px'>
+        <TableContainer width='82.5%' height='305px' overflowX='hidden' marginTop='10px' style={{overflowY: displayTasks.length > 5 ? 'scroll' : 'hidden'}}>
             <Table variant='simple' className='table'>{listOfTasks}</Table>
         </TableContainer>
     )

@@ -39,16 +39,17 @@ function App() {
 
   // UseEffect: renderizar componente con el filtrado
   useEffect(() => {
-    filterSelect(filteredTasks);
+    filterStatusTask(filteredTasks);
   }, [tasks, filteredTasks]);
 
-  const changeInput = (value) => {
+  // Función para recoger el valor del input y crear una nueva tarea
+  const createNewTask = (value) => {
     setNewTask({ ...newTask, name: value });
     filterTasks(value);
   }
 
   // Función para añadir una nueva tarea
-  const handleClickAdd = () => {
+  const addNewTask = () => {
     if (newTask.name === '') { return; };
     if (tasks.find(item => item.name.toLowerCase() === newTask.name.toLowerCase())) { return; };
     const updatedTasks = [...tasks, newTask];
@@ -67,13 +68,15 @@ function App() {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  // Función para filtrar las tareas y mostrarlas
   const filterTasks = (value) => {
     if (!value) return setDisplayTasks(tasks);
     const filterTasks = tasks.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
     setDisplayTasks(filterTasks);
   }
 
-  const handleClickCompleted = (id) => {
+  // Función para marcar como completadas o activas las tareas 
+  const changeStatusTask = (id) => {
     const updatedTasks = tasks.map((task) => {
       if (task.id === id) {
         return { ...task, status: task.status === 'Completed' ? 'Active' : 'Completed' };
@@ -84,13 +87,15 @@ function App() {
     setDisplayTasks(updatedTasks);
   }
 
+  // Función para borrar tareas
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasks(updatedTasks);
     setDisplayTasks(updatedTasks);
   }
 
-  const filterSelect = (value) => {
+  // Función para filtrar las tareas por su estado
+  const filterStatusTask = (value) => {
     setFilteredTasks(value);
     if (value === 'All') {
       setDisplayTasks(tasks);
@@ -103,9 +108,15 @@ function App() {
     }
   }
 
-  const writeDescription = (value) => {
-    
-    setNewTask({ ...newTask, desc: value });
+  // Función para añadir la descripción a la tarea seleccionada
+  const writeDescription = (value, id) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, desc: value };
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
   }
 
   // Rutas
@@ -131,12 +142,12 @@ function App() {
                 tasks={tasks}
                 newTask={newTask}
                 filteredTasks={filteredTasks}
-                changeInput={changeInput}
-                handleClickAdd={handleClickAdd}
-                filterSelect={filterSelect}
+                createNewTask={createNewTask}
+                addNewTask={addNewTask}
+                filterStatusTask={filterStatusTask}
               />
               {displayTasks.length > 0 ? (
-                <TasksList displayTasks={displayTasks} capitalizeFirstLetter={capitalizeFirstLetter} deleteTask={deleteTask} handleClickCompleted={handleClickCompleted} />
+                <TasksList displayTasks={displayTasks} capitalizeFirstLetter={capitalizeFirstLetter} deleteTask={deleteTask} changeStatusTask={changeStatusTask} />
               ) : (
                 <h4 className="not-found">
                   Ningún resultado coincide con su búsqueda

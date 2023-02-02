@@ -1,6 +1,6 @@
 import InputForm from './InputForm.jsx'
 
-function Form({ tasks, newTask, filteredTasks, changeInput, handleClickAdd, filterSelect }) {
+function Form({ tasks, newTask, filteredTasks, createNewTask, addNewTask, filterStatusTask }) {
     const handleSubmit = (ev) => {
         ev.preventDefault()
     }
@@ -9,7 +9,7 @@ function Form({ tasks, newTask, filteredTasks, changeInput, handleClickAdd, filt
         <main className='main'>
             <form className='main__form' onSubmit={handleSubmit}>
                 <div>
-                    <InputForm tasks={tasks} newTask={newTask} filteredTasks={filteredTasks} changeInput={changeInput} handleClickAdd={handleClickAdd} filterSelect={filterSelect} />
+                    <InputForm tasks={tasks} newTask={newTask} filteredTasks={filteredTasks} createNewTask={createNewTask} addNewTask={addNewTask} filterStatusTask={filterStatusTask} />
                 </div>
             </form>
         </main>
