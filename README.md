@@ -79,7 +79,9 @@ A la hora de resolver el proyecto se han utilizado las siguientes herramientas:
   - Props: flujo de información de componentes padres a hijos
   - Lifting: trabajar con eventos y mover información hacia arriba
 - **Control de versiones GIT**
-- **Netlify Drop** un servidor que permite alojar tu proyecto desplegado en la nube
+- **ESLint** para encontrar y arreglar problemas que puedan estar en mi código de JavaScript
+- **Pretier** para formatear el código
+- [**Netlify Drop**](https://app.netlify.com/drop) un servidor que permite alojar tu proyecto desplegado en la nube
 
 ## 💾 Si te gustaría instalarlo, sigue esta guía de inicio rápido
 
