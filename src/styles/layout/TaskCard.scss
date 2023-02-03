@@ -1,0 +1,12 @@
+.table__item{
+    &--head{
+      width: 80%;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px #edf2f7 ;
+    }
+    &--head:hover{
+      background-color: #fff;
+    }
+  }

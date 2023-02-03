@@ -1,0 +1,45 @@
+.detail{
+    background: rgba(238, 234, 234, 0.70);
+    margin-top: 10px;
+    margin-left: 17%;
+    margin-right: 17%;
+    padding: 10px 0 0 0;
+    &__icon{
+      text-align: center;
+      font-weight: 600;
+      padding: 0 0 10px 0;
+    }
+    &__icon:hover{
+      animation: bounce 1s infinite linear;
+    }
+    &__article{
+      padding-bottom: 20px;
+      &--name{
+        border-bottom: solid 1px #edf2f7 ;
+        border-top: solid 1px #edf2f7 ;
+        padding: 10px 0 10px 10px;
+      }
+      &--form{
+        display: flex;
+        border-bottom: solid 1px #edf2f7 ;
+      }
+      &--label{
+        display: block;
+        padding: 10px 0 10px 10px;
+        margin: 10px 0 0 0;
+        border-radius: 10px;
+      }
+      &--desc{
+        padding: 10px 0 10px 0;
+        margin: 10px 0 0 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+  
+  @keyframes bounce {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-20px); }
+    50%  { transform: translateX(-30px); }
+    100% { transform: translateX(0); }
+  }
