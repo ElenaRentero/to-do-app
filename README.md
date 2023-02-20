@@ -12,6 +12,8 @@ En este repositorio puedes encontrar una **aplicación web responsive** que te p
 
 En este repositorio te presentamos una web sencilla, intuitiva y adaptada a cualquier tipo de dispositivo (móvil, tablet y PC) para que puedas echarle un vistazo en cualquier momento. Diseñado y desarrollado con HTML, Sass y React JS, encontrarás una aplicación que te permite administrar tus tareas.
 
+<img width="1000" alt="sketchtodoapp" src="https://user-images.githubusercontent.com/111798280/220186977-cca973fa-f504-4b65-8298-ed2b9b26d46e.png">
+
 ## 📖 Requisitos
 
 Se ha utilizado [Vite](https://vitejs.dev/) como punto de partida, una herramienta de compilación preconfigurada para generar recursos estáticos altamente optimizados para producción. La aplicación consiste en desarrollar un sitio web utilizando los siguientes **elementos**:
