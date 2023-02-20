@@ -141,7 +141,7 @@ function App () {
                   )
                 : (
                   <h4 className='not-found'>
-                    Ningún resultado coincide con su búsqueda
+                    No results match your search
                   </h4>
                   )}
             </>

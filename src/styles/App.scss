@@ -6,14 +6,6 @@
   visibility: hidden;
 }
 
-.button {
-  &__delete {
-    &--icon:hover {
-      color: black;
-    }
-  }
-}
-
 .not-found{
   background: rgba(238, 234, 234, 0.70);
   text-align: center;

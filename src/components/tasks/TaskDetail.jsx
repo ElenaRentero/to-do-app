@@ -21,12 +21,12 @@ function TaskDetail ({ tasks, writeDescription }) {
 
   return (
     <div className='detail'>
-      <Link to='/'><div className='detail__icon'><ArrowBackIcon />Volver</div></Link>
+      <Link to='/'><div className='detail__icon'><ArrowBackIcon />Return</div></Link>
       <article className='detail__article'>
-        <h1 className='detail__article--name'>Nombre de la tarea: {task.name}</h1>
+        <h1 className='detail__article--name'>Task name: {task.name}</h1>
         <form className='detail__article--form'>
           <label className='detail__article--label' for='desc'>
-            Descripción:
+            Description:
             {
                             editing
                               ? <CheckIcon marginLeft={2} onClick={handleClickWrite} />

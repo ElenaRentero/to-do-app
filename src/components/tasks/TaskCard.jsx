@@ -15,12 +15,12 @@ function TaskCard ({ task, capitalizeFirstLetter, deleteTask, changeStatusTask }
         <Td border='none'>{capitalizeFirstLetter(task.name)}</Td>
         <Td className='button' border='none'>
           <Button h='1.75rem' size='sm' marginRight='20px' onClick={() => changeStatusTask(task.id)}>{task.status}</Button>
-          <Button h='1.75rem' size='sm' className='button__delete' onClick={() => handleDeleteTask(task.id)}>
-            <DeleteIcon className='button__delete--icon' color='gray.300' />
+          <Button h='1.75rem' size='sm' className='button__delete' title='Delete' onClick={() => handleDeleteTask(task.id)}>
+            <DeleteIcon className='button__delete--icon' color='black.300' />
           </Button>
           <Link to={`/task/${task.id}`}>
-            <Button h='1.75rem' size='sm' marginLeft='20px' className='button__delete'>
-              <ViewIcon className='button__delete--icon' color='gray.300' />
+            <Button h='1.75rem' size='sm' marginLeft='20px' className='button__delete' title='View Detail'>
+              <ViewIcon className='button__delete--icon' color='black.300' />
             </Button>
           </Link>
         </Td>
